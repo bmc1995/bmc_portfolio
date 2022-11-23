@@ -1,0 +1,21 @@
+.main-header {
+    background-color: #313131;
+    border-bottom: 2px solid black;
+}
+
+.main-header a {
+    color: aliceblue;
+    text-decoration: none;
+    margin: auto 0;
+}
+
+.main-header a:hover {
+    opacity: 75%;
+}
+.main-header a:active {
+    opacity: 50%;
+}
+
+.main-header span {
+    align-self: center;
+}

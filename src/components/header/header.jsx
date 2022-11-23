@@ -1,9 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import Nav from "./nav";
+import './header.css'
 
 const Header = () => {
     return (
-        <header style={{'textAlign': 'center'}}>
-            <span style={{'textAlign': 'center'}}>Hi! This is a header.</span>
+        <header className="main-header" style={{'display': 'flex', 'justifyContent': 'space-between', 'borderBottom': '1px solid black'}}>
+            <NavLink to={'/'} style={{'fontSize': '24px', 'alignItems': 'start', outline: 'none', fontStyle: 'normal'}}>{document.title}</NavLink>
+            <span><Nav/></span>
         </header>
     )
 }

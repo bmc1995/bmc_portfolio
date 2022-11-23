@@ -1,9 +1,10 @@
 import React from "react";
+import './footer.css'
 
 const Footer = () => {
     return (
-        <footer>
-            <h6 style={{'textAlign': 'center'}}>With {'<3'} by Billy</h6>
+        <footer className="main-footer">
+            <h6>This is a footer</h6>
         </footer>
     )
 }
