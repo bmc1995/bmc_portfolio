@@ -1,13 +1,33 @@
 import React from "react";
 import './home.css'
+import { ImageList, ImageListItem } from "@mui/material";
+import { Box } from "@mui/system";
 
-
+const itemData = [
+    { title: "Angular", src: "./techImgs/angular.svg" },
+    { title: "CSS3", src: "./techImgs/css3.webp" },
+    { title: "Docker", src: "./techImgs/docker.webp" },
+    { title: "ExpressJs", src: "./techImgs/expressjs.svg" },
+    { title: "HTML5", src: "./techImgs/html5.svg" },
+    { title: "JavaScript", src: "./techImgs/javascript.svg" },
+    { title: "MongoDB", src: "./techImgs/mongodb.png" },
+    { title: "Microsoft SQL Server", src: "./techImgs/mssql.png" },
+    { title: "MySQL", src: "./techImgs/mysql.png" },
+    { title: "NestJs", src: "./techImgs/nestjs-icon.svg" },
+    { title: "NodeJs", src: "./techImgs/node.png" },
+    { title: "PostgreSQL", src: "./techImgs/postgresql.svg" },
+    { title: "Python", src: "./techImgs/Python_logo_01.svg.png" },
+    { title: "React", src: "./techImgs/react.svg" },
+    { title: "Ruby", src: "./techImgs/ruby.svg" },
+    { title: "Vue", src: "./techImgs/vue-transparent.png" }]
 const Home = () => {
     return (
-        <div style={{ 'textAlign': 'center' }}>
+
+            <Box textAlign={'center'}>
+
             <img className="billyPic" src="1630177862314.jpeg" alt="Billy" />
             <h1>Hi, I'm Billy.</h1>
-            <table>
+            {/* <table>
                 <tbody>
                     <tr className="imgRow">
                         <td><a target="_blank" rel="noopener noreferrer" href="https://html.spec.whatwg.org/multipage/"><img src="./techImgs/html5.svg" alt="HTML5" /></a></td>
@@ -34,9 +54,20 @@ const Home = () => {
                         <td><a target="_blank" rel="noopener noreferrer" href="https://www.mongodb.com/home"><img src="./techImgs/mongodb.png" alt="MongoDB" /></a></td>
                     </tr>
                 </tbody>
-            </table>
-
-        </div>
+            </table> */}
+            <ImageList sx={{justifyItems:'center', alignItems: 'center' }} cols={3}>
+                {itemData.map((item) => (
+                    <ImageListItem sx={{ width: "100px", padding:'50px'}} key={item.src}>
+                        <img
+                            src={`${item.src}`}
+                            alt={item.title}
+                            loading="lazy"
+                            style={{ objectFit: "contain" }}
+                        />
+                    </ImageListItem>
+                ))}
+            </ImageList>
+            </Box>
 
 
     )
