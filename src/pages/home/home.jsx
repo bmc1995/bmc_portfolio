@@ -4,22 +4,22 @@ import { ImageList, ImageListItem } from "@mui/material";
 import { Box } from "@mui/system";
 
 const itemData = [
-    { title: "Angular", src: "./techImgs/angular.svg" },
-    { title: "CSS3", src: "./techImgs/css3.webp" },
-    { title: "Docker", src: "./techImgs/docker.webp" },
-    { title: "ExpressJs", src: "./techImgs/expressjs.svg" },
-    { title: "HTML5", src: "./techImgs/html5.svg" },
-    { title: "JavaScript", src: "./techImgs/javascript.svg" },
-    { title: "MongoDB", src: "./techImgs/mongodb.png" },
-    { title: "Microsoft SQL Server", src: "./techImgs/mssql.png" },
-    { title: "MySQL", src: "./techImgs/mysql.png" },
-    { title: "NestJs", src: "./techImgs/nestjs-icon.svg" },
-    { title: "NodeJs", src: "./techImgs/node.png" },
-    { title: "PostgreSQL", src: "./techImgs/postgresql.svg" },
-    { title: "Python", src: "./techImgs/Python_logo_01.svg.png" },
-    { title: "React", src: "./techImgs/react.svg" },
-    { title: "Ruby", src: "./techImgs/ruby.svg" },
-    { title: "Vue", src: "./techImgs/vue-transparent.png" }]
+    { title: "Angular", src: "./techImgs/angular.svg", href: 'https://angular.io/' },
+    { title: "CSS3", src: "./techImgs/css3.webp", href: 'https://www.w3.org/Style/CSS/' },
+    { title: "Docker", src: "./techImgs/docker.webp", href: 'https://docker.com' },
+    { title: "ExpressJs", src: "./techImgs/expressjs.svg", href: 'https://expressjs.com/' },
+    { title: "HTML5", src: "./techImgs/html5.svg", href: 'https://html.spec.whatwg.org/multipage/' },
+    { title: "JavaScript", src: "./techImgs/javascript.svg", href: 'https://262.ecma-international.org/13.0/' },
+    { title: "MongoDB", src: "./techImgs/mongodb.png", href: 'https://www.mongodb.com/home' },
+    { title: "Microsoft SQL Server", src: "./techImgs/mssql.png", href: 'https://www.microsoft.com/en-us/sql-server/sql-server-2022' },
+    { title: "MySQL", src: "./techImgs/mysql.png", href: 'https://www.mysql.com/' },
+    { title: "NestJs", src: "./techImgs/nestjs-icon.svg", href: 'https://nestjs.com' },
+    { title: "NodeJs", src: "./techImgs/node.png", href: 'https://nodejs.org' },
+    { title: "PostgreSQL", src: "./techImgs/postgresql.svg", href: 'https://postgresql.org' },
+    { title: "Python", src: "./techImgs/Python_logo_01.svg.png", href: 'https://python.org' },
+    { title: "React", src: "./techImgs/react.svg", href: 'https://reactjs.org' },
+    { title: "Ruby", src: "./techImgs/ruby.svg", href: 'https://www.ruby-lang.org' },
+    { title: "Vue", src: "./techImgs/vue-transparent.png", href: 'https://vuejs.org'  }]
 const Home = () => {
     return (
 
@@ -55,9 +55,10 @@ const Home = () => {
                     </tr>
                 </tbody>
             </table> */}
-            <ImageList sx={{justifyItems:'center', alignItems: 'center' }} cols={3}>
+            <ImageList sx={{ margin:'auto', maxWidth: '250px', justifyItems:'center', alignItems: 'center'}} cols={2}>
                 {itemData.map((item) => (
-                    <ImageListItem sx={{ width: "100px", padding:'50px'}} key={item.src}>
+                        <a target="_blank" rel="noopener noreferrer" href={item.href}>
+                    <ImageListItem sx={{ width: "75px", paddingY: '25px', ":hover": {backgroundColor: 'darkgray', borderRadius: '20%'}}} key={item.src}>
                         <img
                             src={`${item.src}`}
                             alt={item.title}
@@ -65,6 +66,7 @@ const Home = () => {
                             style={{ objectFit: "contain" }}
                         />
                     </ImageListItem>
+                        </a>
                 ))}
             </ImageList>
             </Box>

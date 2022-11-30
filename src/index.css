@@ -16,5 +16,5 @@ code {
 #root {
   display: flex;
   flex-direction: column;
-  background-color: slategray;
+  background-color: rgb(69, 78, 78);
 }
